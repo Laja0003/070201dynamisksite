@@ -1,0 +1,318 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  height: 100%;
+  background-color: #f5f5f5;
+}
+
+main {
+  padding: 30px;
+}
+
+h1 {
+  text-align: center;
+  padding: 20px;
+  font-size: 40px;
+  font-family: "Lexend", sans-serif;
+  color: #55504c;
+}
+
+h2 {
+  font-family: "Lexend", sans-serif;
+  color: #55504c;
+}
+
+p {
+  font-family: Arial, sans-serif;
+}
+
+.title {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 20px;
+}
+
+.mainNav h1 span {
+  display: inline-block;
+  transform: scaleX(-1);
+  color: #8f857d;
+}
+
+nav {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background-color: #ffffff;
+  z-index: 1000;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+nav a {
+  color: #8f857d;
+  font-size: 25px;
+  text-decoration: none;
+  font-family: "Mulish", sans-serif;
+}
+
+a:hover {
+  color: #55504c;
+}
+
+nav li.active a {
+  color: #55504c;
+}
+
+/* Kategori siden */
+.kategoriliste {
+  max-width: 400px;
+  margin: 0 auto;
+  list-style: none;
+}
+
+.kategoriliste li {
+  background-color: #dcdcdc;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  gap: 90px;
+  margin-bottom: 10px;
+  list-style: none;
+}
+
+.kategoriliste li a {
+  text-decoration: none;
+  color: #8f857d;
+}
+
+.kategoriliste li a:hover {
+  color: #e4d7cb;
+}
+
+.kategoriliste li:hover {
+  background: #55504c;
+  transition: transform 0.3s;
+}
+
+/* Produktliste */
+.produkt-kort {
+  padding: 20px;
+  background-color: #ddd;
+  border-radius: 10px;
+}
+
+/* Produkt side */
+.produktKort {
+  background-color: #ddd;
+  border-radius: 8px;
+  display: flex;
+  width: 80%; 
+  padding: 1rem;
+}
+
+.produkt-billede {
+  width: 500px; 
+  border-radius: 8px;
+  margin-right: 20px; /
+}
+
+.produkt-info {
+  flex: 1; 
+  padding: 20px;
+  margin-top: 250px; 
+}
+
+.produkt-navn {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.produkt-pris {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.brand .type {
+  padding: 50px;
+}
+
+.produkt-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.produkt-link:hover {
+  background-color: #0056b3;
+}
+
+/*Klasse for udsolgt*/
+.produktliste article.udsolgt img {
+  opacity: 0.3;
+}
+
+.produktliste article.udsolgt::before {
+  content: "Udsolgt";
+  position: absolute;
+  background-color: white;
+  padding: 1.5rem;
+  color: red;
+  font-weight: bold;
+  z-index: 1;
+}
+
+/*Klasse for rabat*/
+.rabat-pris {
+  color: rgb(255, 0, 0);
+  font-weight: bold;
+}
+
+/*Klasse for prisen før*/
+.førpris {
+  text-decoration: line-through;
+  color: gray;
+}
+
+/* Produkt siden */
+.produkt-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.grid_produktliste {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 30px;
+}
+
+.id,
+.id1 {
+  font-weight: bolder;
+  color: #0056b3;
+}
+
+/* Burgermenu */
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.bar {
+  background-color: #dcdcdc;
+  margin: 3px 0;
+  width: 40px;
+  height: 5px;
+  margin-left: 20px;
+}
+
+@media (max-width: 968px) {
+  .grid_produktliste {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .produktKort {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+  }
+
+  .produkt-billede {
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  .produkt-info {
+    margin-top: 0px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Burgermenu */
+  .burger-menu {
+    display: flex;
+    padding-left: 3px;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav ul {
+    display: none;
+  }
+
+  .nav.active ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 20px;
+  }
+
+  main {
+    padding: 30px;
+  }
+
+  .kategoriliste {
+    padding: 20px;
+  }
+
+  .grid_produktliste {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  /*produkt siden*/
+  .produktKort {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 20px;
+  }
+
+  .produkt-kort {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    align-items: center;
+  }
+
+  .produkt-billede2 {
+    width: 80%;
+    border-radius: 8px;
+  }
+
+  .produkt-billede {
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  .produkt-info {
+    margin-top: 0px;
+  }
+}
